@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./tfimg/Techforing-Icon.png" type="image/x-icon">
+    <title>Dashboard</title>
+    <script src="https://kit.fontawesome.com/cf18cbc6fa.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container d-flex justify-content-lg-around">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./tfimg/logo.png" width="130" height="65" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center fw-bolder">
+                        <li class="nav-item me-4">
+                            <form class="d-flex">
+                                <input class="form-control me-2 rounded-pill shadow-sm fontAwesome" type="search" placeholder="&#xf002; Search..." aria-label="Search">
+                            </form>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Anjelina
+                                <img class="ms-2 rounded-circle" src="./tfimg/anjelina.jpg" width="40" height="40"
+                                    alt="">
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item text-center" href="#">
+                                        <i class="fas fa-user me-1"></i> My Profile</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-center" href="#">
+                                        <i class="fas fa-pen me-1"></i> Edit Profile
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="bg-main">
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menubar</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="menubar">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i> Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html">
+                            <i class="fas fa-user-cog"></i> Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i class="fas fa-shopping-cart"></i> Order History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-dollar-sign"></i> Subscriptions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-calendar"></i> Events & Webinars
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-bell"></i> Notifications
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-outline-dark px-4">Log Out</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row p-0 mx-0 container-fluid px-0 px-md-4">
+            <div class="w-20 bg-white shadow px-1 pt-5 d-none d-lg-block">
+                <ul class="menubar">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i> Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html">
+                            <i class="fas fa-user-cog"></i> Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i class="fas fa-shopping-cart"></i> Order History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-dollar-sign"></i> Subscriptions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-calendar"></i> Events & Webinars
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-bell"></i> Notifications
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-outline-dark px-4">Log Out</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 w-80 ps-lg-3 py-3">
+
+                <button class="btn btn-sm btn-outline-primary d-block mx-auto mb-5 d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </button>
+
+                <section class="dashboard-heading">
+                    <h3 class="fw-bold">Hello, Anjelina</h3>
+                    <h4>This is what we got for you today</h4>
+                </section>
+                <section class="orders mt-5">
+                    <h4 class="fw-bold border-bottom border-gray pb-14p mb-5">My Orders</h4>
+                    <div class="row gy-3 gx-3 d-flex justify-content-between align-items-center mx-0">
+                        <div class="col-sm-12 col-w-45 bg-white p-2 rounded-3 shadow p-3">
+                            <h5 class="fw-bold">INCIDENT RESPONSE</h5>
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-8">
+                                    <h6 class="fw-light">Hack recovery</h6>
+                                    <h6 class="fw-light">Purchase Date: <span class="fw-bold fs-6">&nbsp;
+                                            20.02.21</span>
+                                    </h6>
+                                    <h6 class="fw-light d-inline">
+                                        <a href="" class="view-btn">View Invoice</a>
+                                    </h6>
+                                </div>
+                                <div class="col-4 d-flex justify-content-end align-items-center">
+                                    <button class="bg-navy btn btn-sm text-white px-3 py-2">Delivered</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-w-45 bg-white p-2 rounded-3 shadow p-3">
+                            <h5 class="fw-bold">DATA AND PRIVACY PROTECTION</h5>
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-8">
+                                    <h6 class="fw-light">Concierge Cybersecurity</h6>
+                                    <h6 class="fw-light">Purchase Date: <span class="fw-bold fs-6">&nbsp;
+                                            20.02.21</span>
+                                    </h6>
+                                    <h6 class="fw-light d-inline">
+                                        <a href="" class="view-btn">View Invoice</a>
+                                    </h6>
+                                </div>
+                                <div class="col-4 d-flex justify-content-end align-items-center">
+                                    <button class="bg-navy btn btn-sm text-white px-3 py-2">On Going</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+
+                <!-- reading list  -->
+                <section class="readings mt-5">
+                    <h4 class="fw-bold border-bottom border-gray pb-3 mb-5">My Reading List</h4>
+                    <div class="reading-list p-3 rounded-3 shadow bg-white">
+                        <div class="row">
+                            <div class="col-12 col-lg-7">
+                                <h5 class="fw-bold">LOREM IPSUM IS SIMPLY DUMMY TEXT 1</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores possimus aut sit suscipit atque.</p>
+                            </div>
+                            <div class="col-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
+                                <h6 class="fw-bold">Publish Date:</h6>
+                                <h6>27 October, 2020</h6>
+                            </div>
+                            <div class="col-6 col-lg-2 d-flex justify-content-center align-items-center">
+                                <button class="btn btn-sm bg-navy text-white px-2 py-2">Read Full</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-lg-7">
+                                <h5 class="fw-bold">LOREM IPSUM IS SIMPLY DUMMY TEXT 2</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores possimus aut sit suscipit atque.</p>
+                            </div>
+                            <div class="col-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
+                                <h6 class="fw-bold">Publish Date:</h6>
+                                <h6>27 October, 2020</h6>
+                            </div>
+                            <div class="col-6 col-lg-2 d-flex justify-content-center align-items-center">
+                                <button class="btn btn-sm bg-navy text-white px-2 py-2">Read Full</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-lg-7">
+                                <h5 class="fw-bold">LOREM IPSUM IS SIMPLY DUMMY TEXT 3</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores possimus aut sit suscipit atque.</p>
+                            </div>
+                            <div class="col-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
+                                <h6 class="fw-bold">Publish Date:</h6>
+                                <h6>27 October, 2020</h6>
+                            </div>
+                            <div class="col-6 col-lg-2 d-flex justify-content-center align-items-center">
+                                <button class="btn btn-sm bg-navy text-white px-2 py-2">Read Full</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-lg-7">
+                                <h5 class="fw-bold">LOREM IPSUM IS SIMPLY DUMMY TEXT 4</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores possimus aut sit suscipit atque.</p>
+                            </div>
+                            <div class="col-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
+                                <h6 class="fw-bold">Publish Date:</h6>
+                                <h6>27 October, 2020</h6>
+                            </div>
+                            <div class="col-6 col-lg-2 d-flex justify-content-center align-items-center">
+                                <button class="btn btn-sm bg-navy text-white px-2 py-2">Read Full</button>
+                            </div>
+                        </div>
+
+                        <div class="btn-area d-flex justify-content-end">
+                            <button type="button" id="prev-btn" class="btn btn-outline-dark px-3 py-1 me-3">Previous</button>
+                            <button type="button" id="next-btn" class="btn btn-outline-dark px-3 py-1">Next</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="events mt-5">
+                    <h3 class="fw-bold border-bottom border-gray pb-3 mb-5">Upcoming Events</h3>
+                    <div class="row gy-3 gy-lg-0 justify-content-between">
+                        <div class="col-12 col-lg-6">
+                            <div class="card shadow rounded-3">
+                                <div class="row g-0">
+                                    <div class="col-4">
+                                        <img src="./tfimg/Mask Group 12.png" class="img-fluid rounded-start h-100" alt="...">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold text-truncate">Training For HNWI
+                                            </h5>
+                                            <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                            </p>
+                                            <h6><span class="fw-bold">Speaker:</span> Rabiul Islam</h6>
+                                            <h6>
+                                                <i class="far fa-calendar-check"></i>
+                                                <span class="fw-bold mx-2">Date:</span> 05.05.2021
+                                            </h6>
+                                            <h6>
+                                                <i class="far fa-clock"></i>
+                                                <span class="fw-bold mx-2">Time:</span> 08:05 AM
+                                            </h6>
+                                            <button class="btn btn-sm bg-navy ms-0 ms-md-4 text-white px-3 py-2">Register</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="card shadow rounded-3">
+                                <div class="row g-0">
+                                    <div class="col-4">
+                                        <img src="./tfimg/Mask Group 12.png" class="img-fluid rounded-start h-100" alt="...">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold text-truncate">For Large Text, Click to expan the area</h5>
+                                            <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                            </p>
+                                            <h6><span class="fw-bold">Speaker:</span> Rabiul Islam</h6>
+                                            <h6>
+                                                <i class="far fa-calendar-check"></i>
+                                                <span class="fw-bold mx-2">Date:</span> 05.05.2021
+                                            </h6>
+                                            <h6>
+                                                <i class="far fa-clock"></i>
+                                                <span class="fw-bold mx-2">Time:</span> 08:05 AM
+                                            </h6>
+                                            <button class="btn btn-sm bg-navy ms-0 ms-md-4 text-white px-3 py-2">Register</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+
+
+    </main>
+    <footer class="bg-blue p-2 pt-4 p-md-5 pb-md-2">
+
+        <div class="d-flex justify-content-center mb-4">
+            <a href="" class="me-5">PRIVACY POLICY</a>
+            <a href="">TERMS OF USE</a>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="https://www.facebook.com/techforing/">
+                <img src="./tfimg/facebook.png" class="me-3" alt="">
+            </a>
+            <a href="https://www.linkedin.com/company/techforingltd./">
+                <img src="./tfimg/linkedin.png" class="me-3" alt="">
+            </a>
+            <a href="https://twitter.com/techforingltd?lang=en">
+                <img src="./tfimg/twitter-(1).png" class="me-3" alt="">
+            </a>
+            <a href="https://www.instagram.com/techforingltd/">
+                <img src="./tfimg/Instagram.png" alt="">
+            </a>
+        </div>
+
+        <div class="p-3 p-md-4 pb-2 text-center text-white ">
+            <p class="pt-4 border-top border-light">Copyright &copy; 2021 Techforing Ltd.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="menubar.js"></script>
+
+    <script>
+        let updateActiveRow = () => {
+            rows.forEach(row => {
+                row.classList.add('d-none');
+                if (row.classList.contains('show-next'))
+                    row.classList.remove('show-next');
+            });
+            if (activeState >= rows.length || activeState < 0) {
+                activeState = 0;
+            }
+            rows[activeState].classList.remove('d-none');
+            rows[activeState + 1].classList.remove('d-none');
+            rows[activeState].classList.add('show-next');
+            rows[activeState + 1].classList.add('show-next');
+
+        }
+
+        let rows = document.querySelectorAll('.reading-list .row');
+        let prev = document.getElementById('prev-btn');
+        let next = document.getElementById('next-btn');
+        let activeState = 0;
+
+        updateActiveRow();
+        next.addEventListener('click', () => {
+            activeState += 2;
+            updateActiveRow();
+        });
+        prev.addEventListener('click', () => {
+            activeState -= 2;
+            updateActiveRow();
+        });
+
+        var elements = document.querySelectorAll('.card-body h5');
+        elements.forEach(element => {
+            element.addEventListener('click', () => {
+                element.classList.toggle("text-truncate");
+            })
+        });
+    </script>
+</body>
+
+</html>
