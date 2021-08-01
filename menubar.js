@@ -1,4 +1,4 @@
-let menuItemsName = ['dashboard', 'services', 'orders', 'subscriptions', 'events', 'notifications', 'settings'];
+let menuItemsName = ['dashboard.html', 'services', 'orders', 'subscriptions', 'events', 'notifications', 'settings'];
 let url = window.location.href;
 
 menuItemsName.forEach((item, index) => {
