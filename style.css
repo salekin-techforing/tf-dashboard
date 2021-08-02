@@ -27,6 +27,8 @@ body {
     font-size: 15px;
     text-align: center;
     color: black;
+    display: flex;
+    align-items: center;
 }
 
 .menubar li:last-child {
@@ -38,9 +40,20 @@ body {
     border: 1px solid black;
     border-radius: 50%;
     width: 35px;
+    height: 35px;
     margin-right: 5px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+/* .menubar li i:after {
+    content: '';
+    padding-top: 100%;
+    display: inline-block;
+    vertical-align: middle;
+} */
 
 
 /* custom styles  */
@@ -61,6 +74,14 @@ body {
     background-color: rgb(19, 52, 97);
 }
 
+.text-navy {
+    color: #182F59;
+}
+
+.text-green {
+    color: #5BBC2E;
+}
+
 .border-gray {
     border-color: rgba(128, 128, 128, 0.5) !important;
 }
@@ -77,8 +98,35 @@ body {
     padding-bottom: 14px !important;
 }
 
+.top-10p {
+    top: 10px !important;
+}
+
+.start-10p {
+    left: 10px !important;
+}
+
 .rounded-5 {
     border-radius: 0.75rem !important;
+}
+
+.pagination .page-item:not(:last-child) {
+    margin-right: 0.5rem !important;
+}
+
+.pagination .page-link {
+    color: #111125;
+    background: transparent;
+    border-radius: 5px;
+    border-color: gray;
+}
+
+.pagination .page-link:hover {
+    background: rgb(230, 229, 229);
+}
+
+.pagination .page-link:hover {
+    color: #111125;
 }
 
 .shadow-md {
@@ -178,8 +226,62 @@ ol li {
 
 
 /*----------------------------
-    Services page start 
+    Services page end
 ------------------------------*/
+
+.event-row {
+    padding-right: 3rem!important;
+    padding-left: 3rem!important;
+    position: relative;
+}
+
+.event-row>span {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-row .status {
+    right: 0;
+    top: 0;
+    position: absolute;
+    font-weight: 600;
+    color: #182F59;
+}
+
+.slide-right {
+    animation: slideRight 1s forwards;
+    position: relative;
+}
+
+@keyframes slideRight {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.slide-left {
+    animation: slideLeft 1s backwards;
+    position: relative;
+}
+
+@keyframes slideLeft {
+    0% {
+        right: -100%;
+        opacity: 0;
+    }
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
 
 
 /* footer  */
