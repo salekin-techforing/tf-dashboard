@@ -169,27 +169,28 @@
                         <div class="row d-flex justify-content-between ps-2 pe-5">
                             <div class="col-auto">
                                 <div class="d-flex">
-                                    <h6 class="fw-light text-secondary">Sort By <span class="ms-2 text-green" id="selectedItem">Select</span>
+                                    <h6 class="fw-light text-secondary">Sort By
                                     </h6>
                                     <div class="dropdown sorting">
-                                        <button class="border-0 bg-transparent p-0 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"><span
+                                                class="ms-2 text-green" id="selectedItem">Select</span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <li><button id="status-sort" class="dropdown-item">Status- Active</button>
                                             </li>
                                             <li><button id="date-sort" class="dropdown-item">Date</button></li>
+                                            <li><button id="date-sort" class="dropdown-item" onclick="location.reload();">Relevant</button></li>
                                         </ul>
                                     </div>
 
                                 </div>
-
                             </div>
                             <div class="col-auto">
-                                <h6 class="fw-light text-secondary">Show on page (1-2) out of 8</h6>
+                                <h6 class="fw-light text-secondary">Show on page (<span id="current-events-no">1-2</span>) out of 8</h6>
                             </div>
                         </div>
                         <div class="event-row">
-                            <span class="p-1 rounded-circle bg-navy position-absolute start-10p top-10p text-white">1</span>
+                            <span class="event-order">1</span>
                             <div class="p-3 shadow">
                                 <div class="position-relative">
                                     <h5 class="fw-bold">Free Cybersecurity professional training for High net worth individual
@@ -221,7 +222,7 @@
                             </div>
                         </div>
                         <div class="event-row">
-                            <span class="p-1 rounded-circle bg-navy position-absolute start-10p top-10p text-white">2</span>
+                            <span class="event-order">2</span>
                             <div class="p-3 shadow">
                                 <div class="position-relative">
                                     <h5 class="fw-bold">Free Cybersecurity professional training for High net worth individual
@@ -252,7 +253,7 @@
                             </div>
                         </div>
                         <div class="event-row">
-                            <span class="p-1 rounded-circle bg-navy position-absolute start-10p top-10p text-white">3</span>
+                            <span class="event-order">3</span>
                             <div class="p-3 shadow">
                                 <div class="position-relative">
                                     <h5 class="fw-bold">Free Cybersecurity professional training for High net worth individual
@@ -283,7 +284,7 @@
                             </div>
                         </div>
                         <div class="event-row">
-                            <span class="p-1 rounded-circle bg-navy position-absolute start-10p top-10p text-white">4</span>
+                            <span class="event-order">4</span>
                             <div class="p-3 shadow">
                                 <div class="position-relative">
                                     <h5 class="fw-bold">Free Cybersecurity professional training for High net worth individual
@@ -314,7 +315,7 @@
                             </div>
                         </div>
                         <div class="event-row">
-                            <span class="p-1 rounded-circle bg-navy position-absolute start-10p top-10p text-white">5</span>
+                            <span class="event-order">5</span>
                             <div class="p-3 shadow">
                                 <div class="position-relative">
                                     <h5 class="fw-bold">Free Cybersecurity professional training for High net worth individual
@@ -345,7 +346,7 @@
                             </div>
                         </div>
                         <div class="event-row">
-                            <span class="p-1 rounded-circle bg-navy position-absolute start-10p top-10p text-white">6</span>
+                            <span class="event-order">6</span>
                             <div class="p-3 shadow">
                                 <div class="position-relative">
                                     <h5 class="fw-bold">Free Cybersecurity professional training for High net worth individual
@@ -376,7 +377,7 @@
                             </div>
                         </div>
                         <div class="event-row">
-                            <span class="p-1 rounded-circle bg-navy position-absolute start-10p top-10p text-white">7</span>
+                            <span class="event-order">7</span>
                             <div class="p-3 shadow">
                                 <div class="position-relative">
                                     <h5 class="fw-bold">Free Cybersecurity professional training for High net worth individual
@@ -407,7 +408,7 @@
                             </div>
                         </div>
                         <div class="event-row">
-                            <span class="p-1 rounded-circle bg-navy position-absolute start-10p top-10p text-white">8</span>
+                            <span class="event-order">8</span>
                             <div class="p-3 shadow">
                                 <div class="position-relative">
                                     <h5 class="fw-bold">Free Cybersecurity professional training for High net worth individual
@@ -460,8 +461,6 @@
 
             </div>
         </div>
-
-
     </main>
     <footer class=" bg-blue p-2 pt-4 p-md-5 pb-md-2 ">
 
@@ -513,10 +512,17 @@
         let next = document.getElementById('next-btn');
         let statusSortBtn = document.getElementById('status-sort');
         let dateSortBtn = document.getElementById('date-sort');
+        let currentEventsNo = document.getElementById('current-events-no');
         let activeState = 0;
         let pageNo = 0;
         let sortedStatus, sortedDate = false;
 
+
+        let updateEventOrder = (updatedEvents) => {
+            updatedEvents.forEach((event, index) => {
+                event.children[0].textContent = index + 1;
+            });
+        }
 
 
         function sorting(type) {
@@ -559,6 +565,7 @@
             if (!sortedStatus) {
                 sorting();
                 events = document.querySelectorAll('.event-row');
+                updateEventOrder(events);
                 activeState = 0;
                 updateActiveRow('none');
                 sortedStatus = true;
@@ -568,6 +575,7 @@
             if (!sortedDate) {
                 sorting();
                 events = document.querySelectorAll('.event-row');
+                updateEventOrder(events);
                 activeState = 0;
                 updateActiveRow('none');
                 sortedDate = true;
@@ -602,6 +610,7 @@
                 events[activeState + 1].classList.add('slide-left');
             }
 
+            currentEventsNo.textContent = (activeState + 1) + '-' + (activeState + 2);
         }
 
         pagesBtn.shift();

@@ -13,7 +13,7 @@ body {
 
 .menubar {
     list-style-type: none;
-    padding: 10px 15px;
+    padding: 10px;
 }
 
 .menubar li {
@@ -235,12 +235,30 @@ ol li {
     position: relative;
 }
 
+.event-row .event-order {
+    padding: 0.25rem;
+    border-radius: 50%;
+    background-color: #151331;
+    color: white;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
 .event-row>span {
     width: 25px;
     height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.sorting .dropdown-toggle {
+    border: none;
+    position: relative;
+    top: -2px;
+    padding: 0;
+    background: transparent;
 }
 
 .event-row .status {
