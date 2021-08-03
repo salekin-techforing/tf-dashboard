@@ -161,6 +161,28 @@
                     <i class="fas fa-long-arrow-alt-right"></i>
                 </button>
 
+                <style>
+                    .dropdown-menu li {
+                        position: relative;
+                    }
+                    
+                    .dropdown-menu .dropdown-submenu {
+                        display: none;
+                        position: absolute;
+                        left: 100%;
+                        top: -7px;
+                    }
+                    
+                    .dropdown-menu .dropdown-submenu-left {
+                        right: 100%;
+                        left: auto;
+                    }
+                    
+                    .dropdown-menu>li:hover>.dropdown-submenu {
+                        display: block;
+                    }
+                </style>
+
                 <section class="position-relative px-2">
                     <h4 class="fw-bold border-bottom border-gray pb-14p">MY EVENTS & WEBINARS
                     </h4>
@@ -175,11 +197,30 @@
                                         <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"><span
                                                 class="ms-2 text-green" id="selectedItem">Select</span>
                                         </button>
+
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <li><button id="status-sort" class="dropdown-item">Status- Active</button>
+                                            <li><button class="dropdown-item" onclick="location.reload();">Default</button></li>
+                                            <li>
+                                                <button class="dropdown-item">Status &#x25BA;</button>
+                                                <ul class="dropdown-menu dropdown-submenu">
+                                                    <li>
+                                                        <button id="status-active" class="dropdown-item">Active</button>
+                                                        <button id="status-completed" class="dropdown-item">Completed</button>
+                                                    </li>
+                                                </ul>
                                             </li>
-                                            <li><button id="date-sort" class="dropdown-item">Date</button></li>
-                                            <li><button id="date-sort" class="dropdown-item" onclick="location.reload();">Relevant</button></li>
+                                            <li>
+                                                <button class="dropdown-item time-btn">
+                                                    Choose Time &#x25BA;
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-submenu">
+                                                    <li>
+                                                        <button class="dropdown-item">
+                                                            <input type="month" name="" id="event-time">
+                                                        </button>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </div>
 
@@ -494,30 +535,42 @@
     <script src=" menubar.js "></script>
     <script>
         let selectedItem = document.getElementById('selectedItem');
-
-        let dropdownItems = document.querySelectorAll('.sorting .dropdown-menu .dropdown-item');
+        let dropdownItems = document.querySelectorAll('.sorting .dropdown-item');
         dropdownItems.forEach(item => {
             item.addEventListener('click', () => {
-                selectedItem.textContent = item.textContent;
+                if (!item.textContent.includes('Time'))
+                    selectedItem.textContent = item.textContent;
             });
         });
+        document.getElementById('event-time').addEventListener('change', (e) => {
+            selectedItem.textContent = 'Time: ' + e.target.value;
+            // document.querySelector('.time-btn').innerHTML = "<button class='btn btn-sm px-3 btn-outline-success'>Sort</button>";
+            // document.querySelector('.sorting .dropdown-menu').classList.toggle('show');
+        });
 
+        // document.getElementById('dropdownMenuButton').addEventListener('click', () => {
+        //     document.querySelector('.sorting .dropdown-menu').classList.toggle('show');
+        // });
 
-        let statusList = document.querySelectorAll('.event-row .status');
-        let dateList = document.querySelectorAll('.event-row .eventDate');
         let eventsContainer = document.querySelector('.events');
         let events = document.querySelectorAll('.event-row');
         let pagesBtn = Array.from(document.querySelectorAll('.pagination li'));
         let prev = document.getElementById('prev-btn');
         let next = document.getElementById('next-btn');
-        let statusSortBtn = document.getElementById('status-sort');
-        let dateSortBtn = document.getElementById('date-sort');
+        let statusActive = document.getElementById('status-active');
+        let statusCompleted = document.getElementById('status-completed');
+        let dateSortBtn = document.getElementById('event-time');
         let currentEventsNo = document.getElementById('current-events-no');
-        let activeState = 0;
-        let pageNo = 0;
+        let activeState = 0,
+            pageNo = 0;
         let sortedStatus, sortedDate = false;
 
-
+        let updateEventList = () => {
+            events = document.querySelectorAll('.event-row');
+            updateEventOrder(events);
+            activeState = 0;
+            updateActiveRow('none');
+        }
         let updateEventOrder = (updatedEvents) => {
             updatedEvents.forEach((event, index) => {
                 event.children[0].textContent = index + 1;
@@ -526,6 +579,8 @@
 
 
         function sorting(type) {
+            let statusList = document.querySelectorAll('.event-row .status');
+            let dateList = document.querySelectorAll('.event-row .eventDate');
             let array = [];
 
             if (type == 'date') {
@@ -545,14 +600,27 @@
             let len = array.length;
             for (let i = 0; i < len; i++) {
                 for (let j = 0; j < len; j++) {
-                    if (array[j] > array[j + 1]) {
-                        let tmp = array[j];
-                        array[j] = array[j + 1];
-                        array[j + 1] = tmp;
-                        // for html divs sorting 
-                        tmp = eventsSorted[j];
-                        eventsSorted[j] = eventsSorted[j + 1];
-                        eventsSorted[j + 1] = tmp;
+
+                    if (type == 'active') {
+                        if (array[j] > array[j + 1]) {
+                            let tmp = array[j];
+                            array[j] = array[j + 1];
+                            array[j + 1] = tmp;
+                            // for html divs sorting 
+                            tmp = eventsSorted[j];
+                            eventsSorted[j] = eventsSorted[j + 1];
+                            eventsSorted[j + 1] = tmp;
+                        }
+                    } else {
+                        if (array[j] < array[j + 1]) {
+                            let tmp = array[j];
+                            array[j] = array[j + 1];
+                            array[j + 1] = tmp;
+                            // for html divs sorting 
+                            tmp = eventsSorted[j];
+                            eventsSorted[j] = eventsSorted[j + 1];
+                            eventsSorted[j + 1] = tmp;
+                        }
                     }
                 }
             }
@@ -561,25 +629,13 @@
             });
         }
 
-        statusSortBtn.addEventListener('click', () => {
-            if (!sortedStatus) {
-                sorting();
-                events = document.querySelectorAll('.event-row');
-                updateEventOrder(events);
-                activeState = 0;
-                updateActiveRow('none');
-                sortedStatus = true;
-            }
+        statusActive.addEventListener('click', () => {
+            sorting('active');
+            updateEventList();
         });
-        dateSortBtn.addEventListener('click', () => {
-            if (!sortedDate) {
-                sorting();
-                events = document.querySelectorAll('.event-row');
-                updateEventOrder(events);
-                activeState = 0;
-                updateActiveRow('none');
-                sortedDate = true;
-            }
+        statusCompleted.addEventListener('click', () => {
+            sorting('completed');
+            updateEventList();
         });
 
 
