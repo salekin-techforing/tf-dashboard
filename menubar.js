@@ -1,4 +1,4 @@
-let menuItemsName = ['dashboard.html', 'services', 'orders', 'subscriptions', 'events', 'notifications', 'settings'];
+let menuItemsName = ['dashboard', 'services', 'orders', 'subscriptions', 'events', 'notifications', 'settings'];
 let url = window.location.href;
 
 menuItemsName.forEach((item, index) => {
@@ -9,6 +9,7 @@ menuItemsName.forEach((item, index) => {
             background-color: #151331;
                     border-radius: 5px;
                     border-bottom: none;
+                    position: relative;
         }
         .menubar li:nth-child(${index + 1}) i {
                     color: white;
@@ -24,10 +25,9 @@ menuItemsName.forEach((item, index) => {
                     width: 25px;
                     border-radius: 5px;
                     transform: rotate(90deg);
-                    vertical-align: middle;
-                    position: relative;
-                    top: 13px;
-                    float: right;
+                    top: 30px;
+                    right: 0;
+                    position: absolute;
                 }
                 .menubar li:nth-child(${index}) {
                     border-bottom: none;
