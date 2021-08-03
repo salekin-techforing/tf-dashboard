@@ -229,6 +229,26 @@ ol li {
     Services page end
 ------------------------------*/
 
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+}
+
+.dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+}
+
+.dropdown-menu>li:hover>.dropdown-submenu {
+    display: block;
+}
+
 .event-row {
     padding-right: 3rem!important;
     padding-left: 3rem!important;
