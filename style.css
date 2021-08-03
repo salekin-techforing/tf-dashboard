@@ -48,14 +48,6 @@ body {
 }
 
 
-/* .menubar li i:after {
-    content: '';
-    padding-top: 100%;
-    display: inline-block;
-    vertical-align: middle;
-} */
-
-
 /* custom styles  */
 
 .bg-main {
@@ -64,6 +56,7 @@ body {
 
 .bg-navy {
     background-color: #151331;
+    color: white;
 }
 
 .bg-lightgreen {
@@ -80,6 +73,15 @@ body {
 
 .text-green {
     color: #5BBC2E;
+}
+
+.bg-green {
+    background-color: #5BBC2E;
+}
+
+.bg-green {
+    background-color: #5BBC2E;
+    color: white;
 }
 
 .border-gray {
@@ -229,6 +231,11 @@ ol li {
     Services page end
 ------------------------------*/
 
+
+/*----------------------------
+    Events page start
+------------------------------*/
+
 .dropdown-menu li {
     position: relative;
 }
@@ -320,6 +327,78 @@ ol li {
         opacity: 1;
     }
 }
+
+
+/*----------------------------
+    Events page end
+------------------------------*/
+
+
+/*----------------------------
+    Notification page start
+------------------------------*/
+
+.notifications-container .notification {
+    padding-left: 1rem;
+    background-color: #E1E6F1;
+    display: flex;
+    align-items: center;
+    margin-top: 0.25rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.notifications-container .notification .icon {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: #5BBC2E;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notifications-container .notification:nth-child(2) .icon,
+.notifications-container .notification:nth-child(4) .icon {
+    background-color: #151331;
+    color: white;
+}
+
+.notification .col-1 button {
+    display: block;
+}
+
+.prev-heading {
+    overflow: hidden;
+    text-align: center;
+}
+
+.prev-heading:before,
+.prev-heading:after {
+    background-color: rgb(168, 168, 168);
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.prev-heading:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+.prev-heading:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+
+/*----------------------------
+    Notification page end
+------------------------------*/
 
 
 /* footer  */
