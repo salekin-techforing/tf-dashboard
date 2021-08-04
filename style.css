@@ -63,6 +63,10 @@ body {
     background-color: #E1E6F1;
 }
 
+.bg-whitegreen {
+    background-color: #F5F8FE;
+}
+
 .bg-blue {
     background-color: rgb(19, 52, 97);
 }
@@ -257,8 +261,8 @@ ol li {
 }
 
 .event-row {
-    padding-right: 3rem!important;
-    padding-left: 3rem!important;
+    padding-right: 3rem;
+    padding-left: 3rem;
     position: relative;
 }
 
@@ -278,6 +282,11 @@ ol li {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.event-row h5 {
+    font-weight: bold;
+    width: 80%;
 }
 
 .sorting .dropdown-toggle {
@@ -348,9 +357,8 @@ ol li {
 }
 
 .notifications-container .notification .icon {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 0.5rem;
-    background-color: #5BBC2E;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -359,10 +367,19 @@ ol li {
     align-items: center;
 }
 
-.notifications-container .notification:nth-child(2) .icon,
-.notifications-container .notification:nth-child(4) .icon {
-    background-color: #151331;
-    color: white;
+.icon-bg-green {
+    background-color: #5bbc2e87;
+    color: #3c3c3c;
+}
+
+.icon-bg-gray {
+    background-color: #6c796787;
+    color: #3c3c3c;
+}
+
+.icon-bg-blue {
+    background-color: #22529e7a;
+    color: #3e307a;
 }
 
 .notification .col-1 button {
@@ -401,6 +418,22 @@ ol li {
 ------------------------------*/
 
 
+/*----------------------------
+    Settings page start
+------------------------------*/
+
+.profile-info-input input {
+    border: none;
+    border-bottom: 1px solid gray;
+    background: transparent;
+}
+
+
+/*----------------------------
+    Settings page end
+------------------------------*/
+
+
 /* footer  */
 
 footer a {
@@ -416,12 +449,6 @@ footer a:hover {
 footer img {
     width: 40px;
     height: 40px;
-}
-
-footer img:hover {
-    width: 50px;
-    height: 50px;
-    transition: width .2s, height .2s linear;
 }
 
 
@@ -451,5 +478,19 @@ footer img:hover {
     }
     .preview-form {
         margin-top: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .event-row {
+        padding-right: 0;
+        padding-left: 2.5rem;
+    }
+    .event-row .status {
+        right: -10px;
+        top: -15px;
+    }
+    .event-row .event-order {
+        left: 0;
     }
 }
