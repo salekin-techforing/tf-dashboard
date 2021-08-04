@@ -426,6 +426,112 @@ ol li {
     border: none;
     border-bottom: 1px solid gray;
     background: transparent;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.profile-info-input input::placeholder {
+    color: gray;
+    text-align: right;
+    font-family: 'Helvetica', FontAwesome, sans-serif;
+}
+
+.profile-info-input input:focus {
+    outline: none;
+}
+
+.profile-banner>div {
+    background-color: #111125;
+}
+
+.profile-img {
+    position: relative;
+    max-width: 205px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img .img-edit {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    top: 0;
+}
+
+.profile-img .img-edit input+label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    background: #b8dac4;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all .2s ease-in-out;
+}
+
+.profile-img .img-edit input+label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+
+.profile-img .img-edit input+label:after {
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    padding: 5px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.profile-img .img-preview {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    background-color: white;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img .img-preview>div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fa-camera {
+    background-color: #22529e7a;
+    color: gray;
+    position: absolute;
+    border-radius: 50%;
+    padding: 30px;
+    left: 4px;
+    top: 4px;
+    font-size: 50px;
+}
+
+.profile-info h6:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.form-check input,
+.form-check label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 0;
 }
 
 

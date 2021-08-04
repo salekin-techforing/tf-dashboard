@@ -167,7 +167,7 @@
 
                     <div class="row d-flex justify-content-between px-2">
                         <div class="col-auto d-flex">
-                            <h6 class="fw-light bg-navy py-2 px-4 rounded">24 Aug</h6>
+                            <h6 class="fw-light bg-navy py-2 px-4 rounded today">24 Aug</h6>
                         </div>
 
                         <div class="col-auto">
@@ -373,6 +373,12 @@
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js "></script>
     <script src=" menubar.js "></script>
     <script>
+        let d = new Date();
+        let day = d.getDate();
+        let month = d.getMonth();
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        document.querySelector('.today').textContent = day + ' ' + months[d.getMonth()];
+
         let allNotifications = document.querySelectorAll('.notifications-container .notification');
         let newNotifications = document.querySelectorAll('.notifications-container .new .notification');
         let oldNotifications = document.querySelectorAll('.notifications-container .old .notification');

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./tfimg/Techforing-Icon.png" type="image/x-icon">
+    <title>Settings</title>
+    <script src="https://kit.fontawesome.com/cf18cbc6fa.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container d-flex justify-content-lg-around">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./tfimg/logo.png" width="130" height="65" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center fw-bolder">
+                        <li class="nav-item me-4">
+                            <form class="d-flex">
+                                <input class="form-control me-2 rounded-pill shadow-sm fontAwesome" type="search" placeholder="&#xf002; Search..." aria-label="Search">
+                            </form>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Anjelina
+                                <img class="ms-2 rounded-circle" src="./tfimg/anjelina.jpg" width="40" height="40"
+                                    alt="">
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item text-center" href="#">
+                                        <i class="fas fa-user me-1"></i> My Profile</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-center" href="#">
+                                        <i class="fas fa-pen me-1"></i> Edit Profile
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="bg-main">
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menubar</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="menubar">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i> Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html">
+                            <i class="fas fa-user-cog"></i> Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i class="fas fa-shopping-cart"></i> Order History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-dollar-sign"></i> Subscriptions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-calendar"></i> Events & Webinars
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-bell"></i> Notifications
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-outline-dark px-4">Log Out</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row p-0 mx-0 container-fluid px-0 px-md-4">
+            <div class="w-20 bg-white shadow px-1 pt-5 d-none d-lg-block">
+                <ul class="menubar">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i> Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html">
+                            <i class="fas fa-user-cog"></i> Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i class="fas fa-shopping-cart"></i> Order History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-dollar-sign"></i> Subscriptions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-calendar"></i> Events & Webinars
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-bell"></i> Notifications
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-outline-dark px-4">Log Out</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 w-80 ps-lg-3 py-3">
+
+                <button class="btn btn-sm btn-outline-primary d-block mx-auto mb-5 d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </button>
+
+
+                <div class="profile-area pe-md-5">
+                    <section class="profile-banner">
+                        <h6 class="text-green text-end">Your profile is 30% complete now</h6>
+
+                        <div class="row d-flex justify-content-between mx-0 ps-2 py-1 text-white">
+                            <div class="col-6 col-md-8 py-3">
+                                <div class="row d-flex">
+                                    <div class="col-auto me-4">
+                                        <form method="post" enctype="multipart/form-data" action="/upload_image/" id="image_form">
+                                            <div class="profile-img">
+                                                <div class="img-edit">
+                                                    <input type="file" class="d-none" name="image" id="imageUpload" accept="image/*" required>
+                                                    <label for="imageUpload"></label>
+                                                </div>
+                                                <div class="img-preview mx-auto">
+                                                    <div id="imagePreview" style="background-image: url();">
+                                                        <i class="fas fa-camera"></i>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn mt-3 btn-outline-light btn-sm mt-1">Upload
+                                                    your image</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-auto mt-3 mt-md-0 d-flex flex-column justify-content-center">
+                                        <h5>Afsana Communication</h5>
+                                        <p class="mb-0">afsana@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 col-md-3 d-flex justify-content-end align-items-start">
+                                <button class="btn btn-sm edit-btn btn-light">Edit Profile
+                                    <i class="ms-1 fas fa-pencil-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="profile-info mt-3 shadow bg-whitegreen p-4">
+                        <h5>PERSONAL INFORMATION</h5>
+                        <div class="row d-flex justify-content-between mt-3">
+                            <div class="col-md-6 d-flex">
+                                <div class="me-5">
+                                    <h6>Name:</h6>
+                                    <h6>Address:</h6>
+                                    <h6>Country:</h6>
+                                    <h6>Birthdate:</h6>
+                                    <h6>Gender:</h6>
+                                </div>
+                                <div class="profile-info-values">
+                                    <h6>Afsana Communication</h6>
+                                    <h6>------</h6>
+                                    <h6>USA</h6>
+                                    <h6>------</h6>
+                                    <h6>------</h6>
+                                </div>
+
+                                <div class="profile-info-input d-none">
+                                    <input type="text" name="" placeholder="&#xf303" value="Afsana Communication">
+                                    <input type="text" name="" placeholder="&#xf303" value="">
+                                    <input type="text" name="" placeholder="&#xf303" value="USA">
+                                    <input type="text" name="" placeholder="&#xf303" value="">
+
+                                    <select class="form-select form-select-sm w-auto mt-2" aria-label=".form-select-sm example">
+                                        <option selected>Select</option>
+                                        <option value="male">Male</option>
+                                        <option value="femlae">Female</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 d-flex">
+                                <div class="div me-5">
+                                    <h6>Registration Date:</h6>
+                                    <h6>Phone Number:</h6>
+                                    <h6>Email:</h6>
+                                    <h6>Password:</h6>
+                                </div>
+                                <div class="profile-info-values">
+                                    <h6 class="text-danger">21th, December 2021</h6>
+                                    <h6>+88010102255</h6>
+                                    <h6>yourmail@gmail.com</h6>
+                                    <h6>*******</h6>
+                                </div>
+                                <div class="profile-info-input d-none">
+                                    <input type="text" class="text-danger" name="" placeholder="&#xf303" value="21th, December 2021">
+                                    <input type="text" name="" placeholder="&#xf303" value="+88010102255">
+                                    <input type="text" name="" placeholder="&#xf303" value="yourmail@gmail.com">
+                                    <input type="text" name="" placeholder="&#xf303" value="******">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="d-none btn save-btn bg-navy text-white px-3 py-1 mt-3">Save</button>
+                    </section>
+                    <hr class="mt-4">
+
+                    <section class="selection-area row d-flex justify-content-center mt-4">
+                        <div class="col-lg-6">
+                            <h5 class="ms-md-3">Area of Interest</h5>
+                            <h6 class="ms-md-3 fw-bold">Select your interested topics</h6>
+                            <div class="row gx-0 d-flex justify-content-center">
+                                <div class="col-md-5 me-lg-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-4 mt-lg-0">
+                            <h5 class="ms-md-3">Notification & preference</h5>
+                            <h6 class="ms-md-3 fw-bold">Select your preference list</h6>
+                            <div class="row gx-0 d-flex justify-content-center">
+                                <div class="col-md-5 me-lg-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Newsletter Notification
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Email Notification
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            New Article Notification
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Regular Blog Notification
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Risk Assessment
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Push Notification
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            New Article Notification
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Events & Webinar Notification
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            New Service Notification
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            General Notification
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </section>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <footer class="bg-blue p-2 pt-4 p-md-5 pb-md-2">
+
+        <div class="d-flex justify-content-center mb-4">
+            <a href="" class="me-5">PRIVACY POLICY</a>
+            <a href="">TERMS OF USE</a>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="https://www.facebook.com/techforing/">
+                <img src="./tfimg/facebook.png" class="me-3" alt="">
+            </a>
+            <a href="https://www.linkedin.com/company/techforingltd./">
+                <img src="./tfimg/linkedin.png" class="me-3" alt="">
+            </a>
+            <a href="https://twitter.com/techforingltd?lang=en">
+                <img src="./tfimg/twitter-(1).png" class="me-3" alt="">
+            </a>
+            <a href="https://www.instagram.com/techforingltd/">
+                <img src="./tfimg/Instagram.png" alt="">
+            </a>
+        </div>
+
+        <div class="p-3 p-md-4 pb-2 text-center text-white ">
+            <p class="pt-4 border-top border-light">Copyright &copy; 2021 Techforing Ltd.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="menubar.js"></script>
+
+    <script>
+        let profileInfo = document.querySelectorAll('.profile-info-values');
+        let profileInput = document.querySelectorAll('.profile-info-input');
+        document.querySelector('.edit-btn').addEventListener('click', (e) => {
+            profileInfo[0].classList.toggle('d-none');
+            profileInfo[1].classList.toggle('d-none');
+            profileInput[0].classList.toggle('d-none');
+            profileInput[1].classList.toggle('d-none');
+            document.querySelector('.save-btn').classList.toggle('d-none');
+            e.target.classList.toggle('d-none');
+        });
+        document.querySelector('.save-btn').addEventListener('click', (e) => {
+            profileInfo[0].classList.toggle('d-none');
+            profileInfo[1].classList.toggle('d-none');
+            profileInput[0].classList.toggle('d-none');
+            profileInput[1].classList.toggle('d-none');
+            document.querySelector('.edit-btn').classList.toggle('d-none');
+            e.target.classList.toggle('d-none');
+        });
+
+
+        document.getElementById("imageUpload").addEventListener("change", function(e) {
+            if ((this.files[0].type).slice(0, 5) != "image") {
+                document.getElementById("image_form").reset();
+                alert('Invalid Image File!');
+            } else {
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.querySelector('#imagePreview').style.backgroundImage = 'url(' + e.target.result + ')';
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                    var fileInput = document.getElementById('imageUpload');
+                    var filename = fileInput.files[0].name;
+                    document.querySelector('.fa-camera').classList.add('d-none');
+                }
+            }
+        });
+
+        document.querySelectorAll('.selection-area label').forEach(label => {
+            label.classList.add('text-truncate');
+        });
+    </script>
+</body>
+
+</html>
