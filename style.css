@@ -54,7 +54,8 @@ body {
     background-color: #F4F4F4;
 }
 
-.bg-navy {
+.bg-navy,
+.bg-navy:hover {
     background-color: #151331;
     color: white;
 }
@@ -430,13 +431,13 @@ ol li {
     margin-bottom: 5px;
 }
 
-.profile-info-input input::placeholder {
+.profile-info input::placeholder {
     color: gray;
     text-align: right;
     font-family: 'Helvetica', FontAwesome, sans-serif;
 }
 
-.profile-info-input input:focus {
+.profile-info input:focus {
     outline: none;
 }
 
@@ -520,8 +521,24 @@ ol li {
     font-size: 50px;
 }
 
-.profile-info h6:not(:last-child) {
-    margin-bottom: 15px;
+.profile-info table tr {
+    position: relative;
+}
+
+.info-value input {
+    background: transparent;
+    border: none;
+}
+
+.input-as-text input {
+    border-bottom: 1px solid gray;
+}
+
+.input-as-text::after {
+    content: '\f303';
+    font-family: 'FontAwesome';
+    position: absolute;
+    right: 5px;
 }
 
 .form-check input,
@@ -538,6 +555,15 @@ ol li {
 /*----------------------------
     Settings page end
 ------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+.subscription-heading {
+    font-family: 'Merriweather', serif;
+}
+
+.package-details {
+    font-family: 'Roboto', sans-serif;
+}
 
 
 /* footer  */
@@ -584,6 +610,9 @@ footer img {
     }
     .preview-form {
         margin-top: 0;
+    }
+    .profile-info table td {
+        padding: 5px 15px;
     }
 }
 

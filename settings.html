@@ -160,10 +160,9 @@
                 </button>
 
 
-                <div class="profile-area pe-md-5">
+                <div class="profile-area pe-md-5 mt-3">
                     <section class="profile-banner">
                         <h6 class="text-green text-end">Your profile is 30% complete now</h6>
-
                         <div class="row d-flex justify-content-between mx-0 ps-2 py-1 text-white">
                             <div class="col-6 col-md-8 py-3">
                                 <div class="row d-flex">
@@ -198,65 +197,80 @@
                         </div>
                     </section>
 
-                    <section class="profile-info mt-3 shadow bg-whitegreen p-4">
-                        <h5>PERSONAL INFORMATION</h5>
+                    <section class="profile-info mt-3 shadow bg-whitegreen p-1 p-md-4">
+                        <h5 class="ms-0 ms-sm-3">PERSONAL INFORMATION</h5>
                         <div class="row d-flex justify-content-between mt-3">
                             <div class="col-md-6 d-flex">
-                                <div class="me-5">
-                                    <h6>Name:</h6>
-                                    <h6>Address:</h6>
-                                    <h6>Country:</h6>
-                                    <h6>Birthdate:</h6>
-                                    <h6>Gender:</h6>
-                                </div>
-                                <div class="profile-info-values">
-                                    <h6>Afsana Communication</h6>
-                                    <h6>------</h6>
-                                    <h6>USA</h6>
-                                    <h6>------</h6>
-                                    <h6>------</h6>
-                                </div>
-
-                                <div class="profile-info-input d-none">
-                                    <input type="text" name="" placeholder="&#xf303" value="Afsana Communication">
-                                    <input type="text" name="" placeholder="&#xf303" value="">
-                                    <input type="text" name="" placeholder="&#xf303" value="USA">
-                                    <input type="text" name="" placeholder="&#xf303" value="">
-
-                                    <select class="form-select form-select-sm w-auto mt-2" aria-label=".form-select-sm example">
-                                        <option selected>Select</option>
-                                        <option value="male">Male</option>
-                                        <option value="femlae">Female</option>
-                                        <option value="others">Others</option>
-                                    </select>
-                                </div>
-
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Name:</td>
+                                            <td class="info-value">
+                                                <input type="text" name="" value="Afsana Communication">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address:</td>
+                                            <td class="info-value">
+                                                <input type="text" name="" value="-------">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Country:</td>
+                                            <td class="info-value">
+                                                <input type="text" name="" value="USA">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Birthdate:</td>
+                                            <td class="info-value">
+                                                <input type="text" name="" value="-------">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gender:</td>
+                                            <td class="info-value">
+                                                <input type="text" name="" value="-------">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                             <div class="col-md-6 d-flex">
-                                <div class="div me-5">
-                                    <h6>Registration Date:</h6>
-                                    <h6>Phone Number:</h6>
-                                    <h6>Email:</h6>
-                                    <h6>Password:</h6>
-                                </div>
-                                <div class="profile-info-values">
-                                    <h6 class="text-danger">21th, December 2021</h6>
-                                    <h6>+88010102255</h6>
-                                    <h6>yourmail@gmail.com</h6>
-                                    <h6>*******</h6>
-                                </div>
-                                <div class="profile-info-input d-none">
-                                    <input type="text" class="text-danger" name="" placeholder="&#xf303" value="21th, December 2021">
-                                    <input type="text" name="" placeholder="&#xf303" value="+88010102255">
-                                    <input type="text" name="" placeholder="&#xf303" value="yourmail@gmail.com">
-                                    <input type="text" name="" placeholder="&#xf303" value="******">
-                                </div>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Registration Date:</td>
+                                            <td class="info-value">
+                                                <input class="text-danger" type="text" name="" value="21th, December 2021">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone Number:</td>
+                                            <td class="info-value">
+                                                <input type="text" name="" value="+88010102255">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email:</td>
+                                            <td class="info-value">
+                                                <input type="email" name="" value="yourmail@gmail.com">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Password:</td>
+                                            <td class="info-value">
+                                                <input type="password" name="" value="-------">
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <button class="d-none btn save-btn bg-navy text-white px-3 py-1 mt-3">Save</button>
                     </section>
                     <hr class="mt-4">
-
                     <section class="selection-area row d-flex justify-content-center mt-4">
                         <div class="col-lg-6">
                             <h5 class="ms-md-3">Area of Interest</h5>
@@ -445,21 +459,34 @@
     <script src="menubar.js"></script>
 
     <script>
-        let profileInfo = document.querySelectorAll('.profile-info-values');
-        let profileInput = document.querySelectorAll('.profile-info-input');
+        let infoValues = document.querySelectorAll('.profile-info .info-value');
+        let profileInputs = document.querySelectorAll('.profile-info input');
+
+        profileInputs.forEach(input => {
+            input.disabled = true;
+        });
+
         document.querySelector('.edit-btn').addEventListener('click', (e) => {
-            profileInfo[0].classList.toggle('d-none');
-            profileInfo[1].classList.toggle('d-none');
-            profileInput[0].classList.toggle('d-none');
-            profileInput[1].classList.toggle('d-none');
+            infoValues.forEach(info => {
+                info.classList.toggle('input-as-text');
+            });
+
+            profileInputs.forEach(input => {
+                input.disabled = false;
+            });
+
             document.querySelector('.save-btn').classList.toggle('d-none');
             e.target.classList.toggle('d-none');
         });
         document.querySelector('.save-btn').addEventListener('click', (e) => {
-            profileInfo[0].classList.toggle('d-none');
-            profileInfo[1].classList.toggle('d-none');
-            profileInput[0].classList.toggle('d-none');
-            profileInput[1].classList.toggle('d-none');
+            infoValues.forEach(info => {
+                info.classList.toggle('input-as-text');
+            });
+
+            profileInputs.forEach(input => {
+                input.disabled = true;
+            });
+
             document.querySelector('.edit-btn').classList.toggle('d-none');
             e.target.classList.toggle('d-none');
         });
