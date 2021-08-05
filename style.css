@@ -557,7 +557,7 @@ ol li {
 ------------------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
-.subscription-heading {
+.subscription-container {
     font-family: 'Merriweather', serif;
 }
 
@@ -636,6 +636,14 @@ ol li {
 
 .accordion-button:not(.collapsed)::after {
     content: '\f068';
+}
+
+.faq a {
+    text-decoration: none;
+}
+
+.subscription-container .modal-body {
+    padding: 6rem;
 }
 
 
