@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./tfimg/Techforing-Icon.png" type="image/x-icon">
-    <title>Subscription</title>
+    <title>Subscriptions</title>
     <script src="https://kit.fontawesome.com/cf18cbc6fa.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -84,22 +84,22 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="subscriptions.html">
                             <i class="fas fa-dollar-sign"></i> Subscriptions
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="events.html">
                             <i class="far fa-calendar"></i> Events & Webinars
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="notifications.html">
                             <i class="far fa-bell"></i> Notifications
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="settings.html">
                             <i class="fas fa-cog"></i> Settings
                         </a>
                     </li>
@@ -129,22 +129,22 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="subscriptions.html">
                             <i class="fas fa-dollar-sign"></i> Subscriptions
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="events.html">
                             <i class="far fa-calendar"></i> Events & Webinars
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="notifications.html">
                             <i class="far fa-bell"></i> Notifications
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="settings.html">
                             <i class="fas fa-cog"></i> Settings
                         </a>
                     </li>
@@ -168,8 +168,8 @@
                     </div>
 
                     <section class="package-details mt-4">
-                        <div class="row mx-0 d-flex justify-content-between">
-                            <div class="col-auto bg-lightgreen shadow p-3 rounded">
+                        <div class="row mx-0 d-flex justify-content-center justify-content-sm-between">
+                            <div class="package col-9 col-sm-4 col-md-3 col-xl-auto bg-lightgreen shadow p-3 rounded">
                                 <h3 class="fw-bold fs-4">BASIC</h3>
                                 <table class="mx-auto mb-3">
                                     <tr>
@@ -243,7 +243,7 @@
                                 </div>
                                 <button class="mt-3 btn bg-navy px-3 py-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Subscribe</button>
                             </div>
-                            <div class="col-auto bg-lightgreen shadow p-3 rounded">
+                            <div class="package d-none d-sm-block col-9 col-sm-4 col-md-3 col-xl-auto bg-lightgreen shadow p-3 rounded">
                                 <h3 class="fw-bold fs-4">MEDIUM</h3>
                                 <table class="mx-auto mb-3">
                                     <tr>
@@ -317,7 +317,7 @@
                                 </div>
                                 <button class="mt-3 btn bg-navy px-3 py-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Subscribe</button>
                             </div>
-                            <div class="col-auto bg-lightgreen shadow p-3 rounded">
+                            <div class="package d-none d-md-block col-9 col-sm-4 col-md-3 col-xl-auto bg-lightgreen shadow p-3 rounded">
                                 <h3 class="fw-bold fs-4">PREMIUM</h3>
                                 <table class="mx-auto mb-3">
                                     <tr>
@@ -391,7 +391,7 @@
                                 </div>
                                 <button class="mt-3 btn bg-navy px-3 py-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Subscribe</button>
                             </div>
-                            <div class="col-auto bg-lightgreen shadow p-3 rounded">
+                            <div class="package d-none d-xl-block col-9 col-sm-4 col-md-3 col-xl-auto bg-lightgreen shadow p-3 rounded">
                                 <h3 class="fw-bold fs-4">MAXIMUM</h3>
                                 <table class="mx-auto mb-3">
                                     <tr>
@@ -466,6 +466,11 @@
                                 <button class="mt-3 btn bg-navy px-3 py-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Subscribe</button>
                             </div>
                         </div>
+
+                        <!-- <button class="mt-5 d-inline-block d-xl-none btn btn-sm btn-outline-dark" id="prev-package">Prev</button> -->
+                        <button class="mt-5 d-inline-block d-xl-none btn btn-outline-success px-3 fs-5" id="package-change">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
                     </section>
 
 
@@ -488,9 +493,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
 
                     <section class="faq text-start mt-5">
                         <h3 class="fw-bold">Frequently asked Qustions
@@ -556,9 +558,7 @@
                         </div>
                     </section>
 
-
                 </div>
-
             </div>
         </div>
 
@@ -596,6 +596,36 @@
     <script src="menubar.js"></script>
 
     <script>
+        let activeState = 1;
+        let main = document.querySelector('.package-details .row');
+        let packages = document.querySelectorAll('.package-details .row .package');
+
+        document.getElementById('package-change').addEventListener('click', () => {
+
+            packages.forEach(package => {
+                if (!package.classList.contains('d-none')) {
+                    package.classList.add('d-none');
+                }
+            });
+
+            let width = document.body.offsetWidth;
+
+            if (692 < width && width < 1170) {
+                packages[activeState].classList.remove('d-none');
+                packages[activeState + 1].classList.remove('d-none');
+                packages[activeState + 2].classList.remove('d-none');
+                main.innerHTML = packages[activeState].outerHTML + packages[activeState + 1].outerHTML + packages[activeState + 2].outerHTML;
+            } else if (560 < width && width < 692) {
+                packages[activeState + 1].classList.remove('d-none');
+                packages[activeState + 2].classList.remove('d-none');
+                main.innerHTML = packages[activeState + 1].outerHTML + packages[activeState + 2].outerHTML;
+            } else if (width < 560) {
+                if (activeState > packages.length - 1)
+                    activeState = 0;
+                packages[activeState].classList.remove('d-none');
+                activeState++;
+            }
+        });
     </script>
 </body>
 
