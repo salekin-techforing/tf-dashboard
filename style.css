@@ -14,6 +14,7 @@ body {
 .menubar {
     list-style-type: none;
     padding: 10px;
+    padding-left: 0
 }
 
 .menubar li {
@@ -558,7 +559,7 @@ ol li {
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 .subscription-container {
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', serif;
 }
 
 .package-details {
@@ -577,7 +578,7 @@ ol li {
 }
 
 .package-details .bg-lightgreen {
-    background-color: rgb(242, 243, 247);
+    /* background-color: rgb(242, 243, 247); */
 }
 
 .package .info-btn {
@@ -597,7 +598,13 @@ ol li {
 }
 
 .modal-backdrop.show {
-    opacity: 0.7;
+    opacity: 1;
+    background-color: #F4F4F4;
+}
+
+#subscribeModal-2 .btn-close {
+    position: relative;
+    right: -100px;
 }
 
 .accordion-item,
